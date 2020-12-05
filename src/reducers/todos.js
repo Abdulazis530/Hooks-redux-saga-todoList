@@ -1,4 +1,3 @@
-
 const todos = (state = { allTodos: [], filterTodos: [] }, action) => {
     switch (action.type) {
         case 'ADD_TODO_SUCCESS':

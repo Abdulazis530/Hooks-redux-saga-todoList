@@ -1,0 +1,56 @@
+.header {
+    background: $lightblue;
+    display: flex;
+    height: 30vh;
+    @include flexColumn;
+
+    // background-color: red;
+
+    &__title {
+        font-size: 4rem;
+        color: white;
+    }
+
+}
+
+
+
+.filter {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 800px;
+    background-color: pink;
+    @include flex;
+
+
+
+    &__search-container {
+        position: relative;
+        background-color: palegreen;
+        width: 90%;
+
+        .search {
+            position: absolute;
+            top: 36%;
+            left: 1%;
+        }
+    }
+
+    &__search-input {
+        width: 100%;
+        height: 40px;
+        border-radius: 15px;
+        outline-style: none;
+        padding-left: 4%;
+        font: inherit;
+        font-weight: 400;
+    }
+}
+
+
+// $darkgreen:#20533C;
+// $fauxmarine:#61DFA8;
+// $yellow:#FFC535;
+// $gray:#625A65;
+// $lightblue:#625A65;
+// $red:#CF391C;

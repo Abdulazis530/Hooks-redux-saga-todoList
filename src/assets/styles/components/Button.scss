@@ -1,0 +1,6 @@
+.btn {
+    text-align: center;
+    @include flex;
+    width: auto;
+    background-color: red;
+}
