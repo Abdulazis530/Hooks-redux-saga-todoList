@@ -60,14 +60,9 @@ export default function FormAddTodo({ history }) {
                         onChange={handleChange}
                         value={todo.content}
                         placeholder="Take a todo..."
-                        rows="3"
+                        rows="6"
                     />
-                    <label>Todo Category</label>
-                    <select name="category" onChange={handleChange}>
-                        <option value="FRONT_END">Frontend developer</option>
-                        <option value="BACK-END">Backend developer</option>
-                    </select>
-                    <button onClick={submitNote}>Add</button>
+
                 </form>
             </div>
 

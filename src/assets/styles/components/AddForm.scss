@@ -1,0 +1,38 @@
+.form {
+    @include flexColumn;
+    align-items: flex-start;
+
+    &__row {
+        @include flexColumn;
+        width: 100%;
+        align-items: flex-start;
+        margin-bottom: 15px;
+
+        label {
+            color: $darkblue;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__input,
+    &__input--textarea {
+        @include form($yellow, .5em);
+        background: $softyellow;
+
+        &.error {
+            border: 1px solid red;
+        }
+    }
+
+    &__input--textarea {
+        height: 100px;
+        padding-top: 10px;
+    }
+
+}
+
+.error-input {
+    font-size: .8rem;
+    color: $softred;
+}
