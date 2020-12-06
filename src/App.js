@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.scss';
 import Home from './pages/Home';
 import FormAddTodo from './containers/FormAddTodo'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import "./assets/styles/style.scss"
 
 
 function App() {

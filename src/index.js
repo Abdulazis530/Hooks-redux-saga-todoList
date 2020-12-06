@@ -5,7 +5,6 @@ import rootReducer from './reducers';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import "./assets/styles/style.scss"
 
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
