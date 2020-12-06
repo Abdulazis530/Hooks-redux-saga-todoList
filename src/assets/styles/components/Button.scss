@@ -3,4 +3,69 @@
     @include flex;
     width: auto;
     background-color: red;
+    border: none;
+    padding: 10px 10px;
+}
+
+.btn-reset {
+    margin-left: 15px;
+    background-color: $darkblue;
+    box-shadow: 0px 0px 8px $darkblue;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+
+    .icon {
+        margin-right: 5px;
+        color: white;
+    }
+
+    .btn-text {
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    &:hover {
+        background: darken($darkblue, 10);
+
+        .icon,
+        .btn-text {
+            color: white;
+
+        }
+
+
+    }
+}
+
+
+.btn-add {
+    background-color: $yellow;
+    box-shadow: 0px 0px 8px $yellow;
+    border-radius: 30px;
+    position: absolute;
+    bottom: -10%;
+    right: 5%;
+    outline: none;
+    cursor: pointer;
+
+    .fas {
+        color: white;
+
+    }
+
+
+    &:hover {
+        background: darken($yellow, 10);
+
+        .icon,
+        .btn-text {
+            color: white;
+
+        }
+
+
+    }
 }

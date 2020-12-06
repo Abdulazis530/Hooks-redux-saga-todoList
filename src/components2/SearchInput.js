@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Button from './Button';
+
 
 export default function SearchInput() {
     const [value, setValue] = useState("")
@@ -24,10 +24,10 @@ export default function SearchInput() {
                 <i className="search fas fa-search"></i>
             </form>
 
-            <Button className={"btn-reset"}>
-                <i className="fas fa-redo" />
+            <button className="btn btn-reset">
+                <i className="fas fa-redo icon" />
                 <span className="btn-text">reset</span>
-            </Button>
+            </button>
         </>
     )
 }

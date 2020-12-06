@@ -12,6 +12,7 @@ export default function Home() {
                 <SearchBox />
                 <FilterBox />
                 <AddButton />
+                <TodoList />
             </Header>
             <TodoList />
         </div>

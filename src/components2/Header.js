@@ -8,6 +8,10 @@ export default function Header() {
             <div className="filter">
                 <SearchInput />
             </div>
+
+            <button className="btn btn-add">
+                <i className="fas fa-plus fa-2x"></i>
+            </button>
         </header>
     )
 }
