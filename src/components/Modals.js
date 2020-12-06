@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import AddForm from "../components2/AddForm"
-
+import AddForm from "../components/AddForm"
 
 export default function Modal({ isOpen, onClose }) {
 

@@ -13,7 +13,7 @@
     &__item {
         margin: 20px;
         background: $softyellow;
-        max-width: 400px;
+        width: 400px;
         min-height: 300px;
         @include card;
         padding: 15px;
@@ -31,7 +31,7 @@
     &__title {
         text-align: center;
         color: $darkblue;
-        font-size: 1.2rem;
+        font-size: 1rem;
         word-break: break-all;
     }
 
@@ -50,7 +50,7 @@
     &__status {
         width: 80px;
         text-align: center;
-        padding: 5px;
+        padding: 1px;
         color: white;
         cursor: pointer;
         text-transform: uppercase;
@@ -78,6 +78,8 @@
 
     &__content {
         padding: 5px 0;
+        word-break: break-all;
+        min-height: 200px;
     }
 
     .card__footer {

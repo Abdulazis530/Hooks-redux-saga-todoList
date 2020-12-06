@@ -1,16 +1,22 @@
-const todos = (state = { todos: [], isLoading: false, isError: false }, action) => {
+const todos = (state = { todos: [], isLoading: false, isError: false, filter: "ALL" }, action) => {
     switch (action.type) {
         case 'ADD_TODO_SUCCESS':
+
             return {
                 ...state,
-                todos: [action.todo, ...state.todos]
+                filter: action.filter
 
             }
 
         case 'LOAD_TODO_SUCCESS':
+            console.log("INSIDE REDUCER:", action.filter)
+
             return {
-                allTodos: [...action.todos],
-                filterTodos: []
+                ...state,
+                todos: action.todos,
+                filter: action.filter
+
+
             }
         // case 'FILTER_TODO'
         //     // case 'FILTER_TODO':

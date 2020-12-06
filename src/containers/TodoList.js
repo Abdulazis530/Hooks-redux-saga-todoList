@@ -1,21 +1,30 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadTodo } from '../actions'
-import TodoItem from '../components2/TodoItem'
+import TodoItem from '../components/TodoItem'
 
 
 export default function TodoList() {
-    // const dispatch = useDispatch()
-    // const { allTodos } = useSelector(state => state.todos)
+    const dispatch = useDispatch()
+    const { todos, filter } = useSelector(state => state.todos)
 
-    // useEffect(() => {
-    //     dispatch(loadTodo())
-    // }, [dispatch])
+    useEffect(() => {
+        console.log("INSIDE TODOLIST USEEFECT:", filter)
+        dispatch(loadTodo(filter))
+    }, [dispatch])
+    console.log("INSIDE TODOLIST:", todos)
 
 
     return (
         <div className="todo__box">
-            {Array.from('limassss').map(i => <TodoItem key={i} />)}
+            {todos.map((todo, index) =>
+                <TodoItem
+                    key={index}
+                    title={todo.title}
+                    content={todo.content}
+                    time={todo.time}
+                    isDone={todo.isDone}
+                />)}
         </div>
     )
 }

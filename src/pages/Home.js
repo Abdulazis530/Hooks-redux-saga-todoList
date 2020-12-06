@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components2/Header'
+import Header from '../components/Header'
 import TodoList from '../containers/TodoList'
 export default function Home() {
     return (

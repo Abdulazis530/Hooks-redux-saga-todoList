@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addTodo } from '../actions'
 import useForm from '../hooks/useForm'
 import validate from "../utils/validate"
@@ -7,10 +7,10 @@ import Swal from 'sweetalert2'
 
 
 export default function AddForm({ onClose }) {
-
+    const { filter } = useSelector(state => state.todos)
     const dispatch = useDispatch()
     const submit = (values) => {
-        dispatch(addTodo(values))
+        dispatch(addTodo(values, filter))
         console.log("form submited")
         onClose()
         Swal.fire({

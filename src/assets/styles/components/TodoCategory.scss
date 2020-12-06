@@ -27,5 +27,10 @@
            color: white;
            padding: 5px;
            display: block;
+
+           &.active {
+               background: $darkblue;
+
+           }
        }
    }
