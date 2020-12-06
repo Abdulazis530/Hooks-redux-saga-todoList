@@ -1,17 +1,25 @@
-import Swal from 'sweetalert2'
+import { v4 as uuidv4 } from 'uuid';
 
 
 
-export const addTodo = (todo, history) => ({
-    type: "ADD_NEW_TODO",
-    todo,
-    history
-})
+const todosStorage = localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : []
 
-export const addDataSuccess = (todo) => ({
-    type: "ADD_TODO_SUCCESS",
-    todo
-})
+export const addTodo = (todo) => dispatch => {
+    /*adding addtional property to todo object before store it in the localstorage */
+    todo.isDone = false
+    todo.id = uuidv4()
+    /*record unix time when todo created*/
+    const d = new Date();
+    todo.time = Math.floor(d.getTime() / 1000);
+    /*store in localstorage*/
+    todosStorage.push(todo)
+    localStorage.setItem("todos", JSON.stringify(todosStorage))
+    /*send to reducer store for display purpose*/
+    dispatch({ type: "ADD_TODO_SUCCESS", todo })
+}
+
+
+
 export const loadTodo = () => ({
     type: "LOAD_TODO"
 })
@@ -43,16 +51,3 @@ export const loadTodosSuccess = (todos) => ({
 // }
 
 // //add
-// function addTodo(payload) {
-//     const { todo, history } = payload;
-//     const todos = JSON.parse(localStorage.getItem("data"))
-//     todos.push(todo)
-//     localStorage.setItem("data", JSON.stringify(todos))
-//     try {
-//         yield put(actions.addDataSuccess(todo))
-//         history.push('/')
-//     } catch (error) {
-//         console.log(error)
-
-//     }
-// }

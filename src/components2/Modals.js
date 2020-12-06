@@ -17,7 +17,7 @@ export default function Modal({ isOpen, onClose }) {
                 </button>
 
                 <div className="modal__body">
-                    <AddForm />
+                    <AddForm onClose={onClose} />
                 </div>
             </div>
 

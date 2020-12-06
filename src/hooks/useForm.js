@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default function useForm(validate, callback) {
+export default function useForm(validate, submitfunc) {
     const [values, setValues] = useState({ title: "", content: "" })
     const [errorValues, setErrorvalues] = useState({})
     const [submit, setSubmit] = useState(false)
@@ -20,7 +20,7 @@ export default function useForm(validate, callback) {
 
     useEffect(() => {
         if (!Object.keys(errorValues).length && submit) {
-            callback()
+            submitfunc(values)
         }
     }, [errorValues])
 

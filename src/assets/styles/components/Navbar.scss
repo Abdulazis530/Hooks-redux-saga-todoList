@@ -1,0 +1,44 @@
+.navbar {
+    @include flex;
+    justify-content: space-between;
+    padding: 0px 100px;
+    background: $lightblue;
+    width: 100%;
+    box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: .6);
+
+    &__brand {
+        font-size: 1.2rem;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+
+    .text-yellow {
+        color: $softyellow
+    }
+
+    &__menu {
+        @include flex;
+        cursor: pointer;
+
+    }
+
+    &__item {
+
+        &:hover {
+            a {
+                background: $yellow;
+            }
+        }
+    }
+
+
+    &__link {
+        padding: 15px;
+        display: block;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: white;
+    }
+
+}

@@ -1,18 +1,10 @@
-const todos = (state = { allTodos: [], filterTodos: [] }, action) => {
+const todos = (state = { todos: [], isLoading: false, isError: false }, action) => {
     switch (action.type) {
         case 'ADD_TODO_SUCCESS':
             return {
-                allTodos: [{
-                    id: action.todo.id,
-                    title: action.todo.title,
-                    content: action.todo.content,
-                    categoty: action.todo.category,
-                    completed: false,
-                    isEdit: false
-                },
-                ...state.allTodos
-                ],
-                filterTodos: state.filterTodos
+                ...state,
+                todos: [action.todo, ...state.todos]
+
             }
 
         case 'LOAD_TODO_SUCCESS':

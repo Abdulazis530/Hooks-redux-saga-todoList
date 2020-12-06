@@ -53,3 +53,19 @@
 
     }
 }
+
+
+
+@include tablet {
+
+    .modal {
+        max-width: 500px;
+    }
+}
+
+
+@include mobile {
+    .modal {
+        max-width: 360px;
+    }
+}

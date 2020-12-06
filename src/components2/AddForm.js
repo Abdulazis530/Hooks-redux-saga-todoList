@@ -1,17 +1,24 @@
 import React from 'react'
-// import { useDispatch } from 'react-redux'
-// import { addTodo } from '../actions'
+import { useDispatch } from 'react-redux'
+import { addTodo } from '../actions'
 import useForm from '../hooks/useForm'
 import validate from "../utils/validate"
+import Swal from 'sweetalert2'
 
 
 export default function AddForm({ onClose }) {
 
-    // const dispatch = useDispatch()
-    const submit = () => {
-        // addJob(values, onClose)
+    const dispatch = useDispatch()
+    const submit = (values) => {
+        dispatch(addTodo(values))
         console.log("form submited")
-
+        onClose()
+        Swal.fire({
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1500
+        })
     };
     const { handleChange, handleSubmit, values, errorValues } = useForm(validate, submit)
 

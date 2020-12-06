@@ -20,10 +20,16 @@
     font: inherit;
     font-weight: 400;
     border: none;
+}
 
-    &:focus {
-        box-shadow: 0px 0px 8px $color;
+@mixin card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+
+    &:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
+
 }
 
 @mixin customButton($color, $bdrradius) {

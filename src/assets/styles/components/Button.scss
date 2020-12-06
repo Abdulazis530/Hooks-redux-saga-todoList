@@ -5,12 +5,13 @@
     background-color: red;
     border: none;
     padding: 10px 10px;
+
 }
 
 
 
 .btn-reset {
-    @include customButton($darkblue, 5px);
+    @include customButton($softred, 0px);
     margin-left: 15px;
 
 
@@ -21,7 +22,7 @@
 
     .btn-text {
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 700;
         color: white;
         text-transform: uppercase;
     }
@@ -45,13 +46,38 @@
 .btn-save {
     margin-top: 15px;
     @include customButton($lightblue, 5px);
-
     width: 100%;
 
     .btn-text {
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 700;
+
         color: white;
         text-transform: uppercase;
     }
+}
+
+
+.btn-edit,
+.btn-delete {
+    margin: 10px;
+    @include customButton($green, 0px);
+    width: 100%;
+
+    .btn-text {
+        font-size: 1rem;
+        font-weight: 700;
+
+        color: white;
+        text-transform: uppercase;
+    }
+
+    .icon {
+        margin-right: 5px;
+        color: white;
+    }
+}
+
+.btn-delete {
+    @include customButton(red, 0px)
 }
