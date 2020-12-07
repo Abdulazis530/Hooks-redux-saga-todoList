@@ -1,19 +1,39 @@
 import React from 'react'
 import moment from 'moment';
 import Fade from "react-reveal/Fade"
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteTodo } from '../actions'
+import Swal from 'sweetalert2'
 
 export default function TodoItem(props) {
-    const { title, content, time, isDone } = props
+    const dispatch = useDispatch()
+    const { title, content, time, isDone, id } = props
+
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "This todo will be deleted !",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#08db93',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No!',
+        }).then(result => {
+            if (result.value) {
+                dispatch(deleteTodo(id))
+            }
+        })
+    }
     return (
         <Fade bottom>
-
             <div className="todo__item">
                 <div className="card__header">
                     <h2 className="todo__title"> {title}</h2>
                     <div className="todo__meta">
                         <span className={`todo__status ${isDone ? "complete" : "active"}`}>{isDone ? "complete" : "active"}</span>
                         <span className="todo__date">
-                            {moment.unix(time).fromNow()}
+                            {moment(time).fromNow()}
                         </span>
                     </div>
 
@@ -28,7 +48,7 @@ export default function TodoItem(props) {
                         <i className="fas fa-edit icon" />
                         <span className="btn-text">edit</span>
                     </button>
-                    <button className="btn btn-delete">
+                    <button className="btn btn-delete" onClick={() => handleDelete(id)}>
                         <i className="fas fa-trash icon" />
                         <span className="btn-text">delete</span>
                     </button>

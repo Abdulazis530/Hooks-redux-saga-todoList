@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addTodo } from '../actions'
 import useForm from '../hooks/useForm'
 import validate from "../utils/validate"
-import Swal from 'sweetalert2'
 
 
 export default function AddForm({ onClose }) {
@@ -13,12 +12,7 @@ export default function AddForm({ onClose }) {
         dispatch(addTodo(values, filter))
         console.log("form submited")
         onClose()
-        Swal.fire({
-            icon: 'success',
-            title: 'Your work has been saved',
-            showConfirmButton: false,
-            timer: 1500
-        })
+
     };
     const { handleChange, handleSubmit, values, errorValues } = useForm(validate, submit)
 

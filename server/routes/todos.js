@@ -7,13 +7,13 @@ const moment = require('moment')
 router.get('/', async (req, res, next) => {
   let response = {}
   try {
-    const result = await Todo.find().sort({ createdAt: 1 })
+    const result = await Todo.find().sort({ createdAt: -1 })
     let data = result.map(field => ({
       _id: field._id,
       id: field.id,
-      title: field.totle,
+      title: field.title,
       content: field.content,
-      date: moment(field.createdAt).fromNow(),
+      createdAt: field.createdAt
     }))
     response.message = "Load data success!"
     response.data = data

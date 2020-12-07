@@ -1,33 +1,42 @@
-const todos = (state = { todos: [], isLoading: false, isError: false, filter: "ALL" }, action) => {
+const todos = (state = { todos: [], isLoading: true, filter: "ALL" }, action) => {
     switch (action.type) {
         case 'ADD_TODO_SUCCESS':
-
             return {
                 ...state,
-                filter: action.filter
-
+                filter: action.filter,
+                todos: [action.todo, ...state.todos],
+                isLoading: false
             }
-
         case 'LOAD_TODO_SUCCESS':
-            console.log("INSIDE REDUCER:", action.filter)
-
             return {
                 ...state,
                 todos: action.todos,
-                filter: action.filter
-
-
+                filter: action.filter,
+                isLoading: false
             }
-        // case 'FILTER_TODO'
-        //     // case 'FILTER_TODO':
-
-        //     //   if(action.title) 
-        //     // const filteredTodos = state.allTodos.filter(todo => todo.title===title && todo.category && todo. )
-
-        //     return { totalPage: 0, data: [] }
-
+        case 'DELETE_TODO_SUCCESS':
+            return {
+                ...state,
+                todos: [...state.todos.filter(todo => todo.id !== action.id)],
+            }
+        case 'SET_LOADING':
+            return {
+                ...state,
+                isLoading: true
+            }
+        case "ADD_TODO_FAILED":
+            return {
+                ...state,
+                filter: action.filter,
+                isLoading: false
+            }
+        case "DELETE_FAILED":
+        case "LOAD_TODO_FAILED":
         default:
-            return state
+            return {
+                ...state,
+                isLoading: false
+            }
     }
 }
 export default todos
