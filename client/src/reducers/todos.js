@@ -30,7 +30,16 @@ const todos = (state = { todos: [], isLoading: true, filter: "ALL" }, action) =>
                 filter: action.filter,
                 isLoading: false
             }
-        case "DELETE_FAILED":
+        case "EDIT_TODO_SUCCESS":
+            return {
+                ...state,
+                todos: [...state.todos.map(todo => {
+                    if (todo.id === action.id) todo = action.todo
+                    return todo
+                })]
+            }
+        case "DELETE_TODO_FAILED":
+        case "EDIT_TODO_FAILED":
         case "LOAD_TODO_FAILED":
         default:
             return {

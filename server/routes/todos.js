@@ -8,15 +8,8 @@ router.get('/', async (req, res, next) => {
   let response = {}
   try {
     const result = await Todo.find().sort({ createdAt: -1 })
-    let data = result.map(field => ({
-      _id: field._id,
-      id: field.id,
-      title: field.title,
-      content: field.content,
-      createdAt: field.createdAt
-    }))
     response.message = "Load data success!"
-    response.data = data
+    response.data = result
     res.status(200).json(response)
   } catch (error) {
     console.log(error);
@@ -30,8 +23,10 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
   let response = {}
   const { id, title, content, isDone } = req.body
+  console.log(req.body)
   try {
     const data = await Todo.create({ id, title, content, isDone })
+    console.log("data", data)
     response.data = data
     response.message = "POST data success!"
     res.status(201).json(response)

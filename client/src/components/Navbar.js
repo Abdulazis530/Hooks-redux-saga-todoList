@@ -8,10 +8,10 @@ export default function Navbar() {
             </h1>
             <ul className="navbar__menu">
                 <li className="navbar__item">
-                    <a className="navbar__link">Portofolio</a>
+                    <a className="navbar__link" href="https://github.com/Abdulazis530">Portofolio</a>
                 </li>
                 <li className="navbar__item">
-                    <a className="navbar__link">About Me</a>
+                    <a className="navbar__link" href="https://www.linkedin.com/in/abdul-azis-27ok/">About Me</a>
                 </li>
             </ul>
         </nav>

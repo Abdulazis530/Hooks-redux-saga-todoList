@@ -14,7 +14,7 @@ export default function TodoList() {
     }, [dispatch, filter])
 
 
-    console.log(todos)
+    console.log(todos, filter)
     return (
         <div className="todo__box">
 
@@ -31,7 +31,9 @@ export default function TodoList() {
                             id={todo.id}
                         />)
             }
-            {filter !== "SEARCHED" && !todos.length && <h1>Yaaay to got nothing Todo!</h1>}
+            {filter === "COMPLETE" && !todos.length && <h1>Naah you dont have any todo completed!</h1>}
+            {filter === "ACTIVE" && !todos.length && <h1>You dont have any todo active!</h1>}
+            {filter === "ALL" && !todos.length && <h1>Yaaay you dont have any todo!</h1>}
             {filter === "SEARCHED" && !todos.length && <h1>Todo not found!</h1>}
         </div>
     )

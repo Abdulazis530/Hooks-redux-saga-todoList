@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import moment from 'moment';
 import Fade from "react-reveal/Fade"
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteTodo } from '../actions'
 import Swal from 'sweetalert2'
+import Modal from './Modals';
+import EditForm from './EditForm';
 
 export default function TodoItem(props) {
+    const [openModal, setOpenModal] = useState(false)
     const dispatch = useDispatch()
     const { title, content, time, isDone, id } = props
 
@@ -27,6 +30,9 @@ export default function TodoItem(props) {
     }
     return (
         <Fade bottom>
+            <Modal isOpen={openModal} onClose={() => setOpenModal(false)} isEdit >
+                <EditForm onClose={() => setOpenModal(false)} editedValue={{ title, content, isDone }} id={id} />
+            </Modal>
             <div className="todo__item">
                 <div className="card__header">
                     <h2 className="todo__title"> {title}</h2>
@@ -44,7 +50,7 @@ export default function TodoItem(props) {
                     </p>
                 </div>
                 <div className="card__footer">
-                    <button className="btn btn-edit">
+                    <button className="btn btn-edit" onClick={() => setOpenModal(true)}>
                         <i className="fas fa-edit icon" />
                         <span className="btn-text">edit</span>
                     </button>

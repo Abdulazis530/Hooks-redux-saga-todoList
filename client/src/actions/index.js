@@ -96,3 +96,23 @@ export const deleteTodo = (id) => {
 }
 
 
+export const editTodo = (id, todo) => {
+    return dispatch => {
+        request.put(`todos/${id}`, todo).then(response => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Todo has been updated',
+                showConfirmationButton: false,
+            })
+            dispatch({ type: "EDIT_TODO_SUCCESS", id, todo })
+        }).catch(error => {
+            console.log(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: error,
+            })
+            dispatch({ type: "EDIT_TODO_FAILED" })
+        })
+    }
+}

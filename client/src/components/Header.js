@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import AddForm from './AddForm'
 import Modal from './Modals'
 import Navbar from './Navbar'
 import SearchInput from './SearchInput'
 import TodoCategory from './TodoCategory'
+
 
 export default function Header() {
     const [openModal, setOpenModal] = useState(false)
@@ -17,7 +19,10 @@ export default function Header() {
                 <button className="btn btn-add" onClick={() => setOpenModal(true)}>
                     <i className="fas fa-plus fa-2x"></i>
                 </button>
-                <Modal isOpen={openModal} onClose={() => setOpenModal(false)} />
+
+                <Modal isOpen={openModal} onClose={() => setOpenModal(false)} >
+                    <AddForm onClose={() => setOpenModal(false)} />
+                </Modal>
             </div>
         </header>
     )
