@@ -13,7 +13,7 @@
     &__item {
         margin: 20px;
         background: $softyellow;
-        width: 400px;
+        max-width: 400px;
         min-height: 300px;
         @include card;
         padding: 15px;
@@ -87,4 +87,14 @@
         justify-content: space-evenly;
     }
 
+}
+
+
+@include mobile {
+    .todo {
+        &__item {
+            min-width: 350px;
+            min-height: 350px;
+        }
+    }
 }

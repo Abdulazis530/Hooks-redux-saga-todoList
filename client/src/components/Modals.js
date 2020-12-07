@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 
 export default function Modal(props) {
     const { isOpen, onClose, children } = props
-    console.log("YAAAY")
     if (!isOpen) return null
 
     return ReactDOM.createPortal(

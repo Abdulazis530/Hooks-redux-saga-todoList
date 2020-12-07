@@ -9,8 +9,6 @@ export default function TodoCategory() {
     const changeTypeTypeTodo = (type) => {
         dispatch(loadTodo(type))
     }
-
-    console.log(filter)
     return (
         <ul className="category">
             <li className="category__item" onClick={() => changeTypeTypeTodo("ALL")}>

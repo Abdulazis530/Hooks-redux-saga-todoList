@@ -17,7 +17,7 @@ export default function SearchInput() {
         setValue(e.target.value)
     }
     return (
-        <form className="filter__search-container">
+        <form className="filter__search-container" autocomplete="off" >
             <input className="filter__search-input" type="text"
                 name="filter"
                 value={value}

@@ -2,13 +2,12 @@ import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 import Swal from 'sweetalert2'
 
+
+/* you can try in mobile by changing base url with your local ip address*/
 const request = axios.create({
-    baseURL: 'http://192.168.43.9:3001/api/',
+    baseURL: 'http://localhost:3001/api/',
     timeout: 1000,
 });
-
-
-const todosStorage = localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : []
 
 export const addTodo = (todo, filter) => {
     return dispatch => {
@@ -39,7 +38,6 @@ export const addTodo = (todo, filter) => {
 
 
 export const loadTodo = (filter) => {
-    console.log(filter)
     return dispatch => {
         dispatch({ type: "SET_LOADING" })
         request.get('todos').then(response => {

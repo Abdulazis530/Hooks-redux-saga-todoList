@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadTodo } from '../actions'
-import Spinner from '../components/Spinner'
-import TodoItem from '../components/TodoItem'
+import Spinner from './Spinner'
+import TodoItem from './TodoItem'
 
 
 export default function TodoList() {
@@ -13,8 +13,6 @@ export default function TodoList() {
         dispatch(loadTodo(filter))
     }, [dispatch, filter])
 
-
-    console.log(todos, filter)
     return (
         <div className="todo__box">
 

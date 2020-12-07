@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { editTodo } from '../actions'
 import useFormEdit from '../hooks/useFormEdit'
 import validate from "../utils/validate"
@@ -20,7 +20,7 @@ export default function EditForm({ onClose, editedValue, id }) {
 
 
     return (
-        <form className="form" onSubmit={handleSubmit} noValidate>
+        <form className="form" onSubmit={handleSubmit} noValidate autocomplete="off">
             <div className="form__row">
                 <label>Title</label>
                 <input

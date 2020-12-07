@@ -10,17 +10,14 @@ export default function AddForm({ onClose }) {
     const { filter } = useSelector(state => state.todos)
     const dispatch = useDispatch()
     const submit = (values) => {
-        console.log("here")
         dispatch(addTodo(values, filter))
-        console.log("form submited")
         onClose()
-
     };
     const { handleChange, handleSubmit, values, errorValues } = useFormAdd(validate, submit)
 
 
     return (
-        <form className="form" onSubmit={handleSubmit} noValidate>
+        <form className="form" onSubmit={handleSubmit} noValidate autocomplete="off">
             <div className="form__row">
                 <label>Title</label>
                 <input

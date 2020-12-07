@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import moment from 'moment';
 import Fade from "react-reveal/Fade"
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { deleteTodo } from '../actions'
 import Swal from 'sweetalert2'
 import Modal from './Modals';

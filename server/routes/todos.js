@@ -23,10 +23,8 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
   let response = {}
   const { id, title, content, isDone } = req.body
-  console.log(req.body)
   try {
     const data = await Todo.create({ id, title, content, isDone })
-    console.log("data", data)
     response.data = data
     response.message = "POST data success!"
     res.status(201).json(response)
@@ -41,7 +39,6 @@ router.post('/', async (req, res, next) => {
 
 router.delete('/:id', async (req, res, next) => {
   const { id } = req.params
-  console.log("here")
   let response = {}
   try {
     const data = await Todo.findOneAndRemove({ id })

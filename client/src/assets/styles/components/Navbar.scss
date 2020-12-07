@@ -42,3 +42,25 @@
     }
 
 }
+
+@include mobile {
+    .navbar {
+        justify-content: center;
+        padding: 10px;
+
+        &__menu {
+            display: none;
+        }
+    }
+}
+
+@include tablet {
+    .navbar {
+        justify-content: center;
+        padding: 10px;
+
+        &__menu {
+            display: none;
+        }
+    }
+}
