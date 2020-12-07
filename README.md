@@ -52,22 +52,18 @@ Application is running!
 ## Click yellow button and modal will show up, you can add new todo here
 
 <img src="client/src/assets/images/sc2.png" width=400>
-<img src="client/src/assets/images/sc3.png" width=400>
-<img src="client/src/assets/images/sc4.png" width=400>
 
 ## deleting todo with confirmation
 
-<img src="client/src/assets/images/sc5.png" width=400>
-<img src="client/src/assets/images/sc6.png" width=400>
+<img src="client/src/assets/images/sc3.png" width=400>
 
 ## Edit and update todo
 
-<img src="client/src/assets/images/sc7.png" width=400>
-<img src="client/src/assets/images/sc8.png" width=400>
+<img src="client/src/assets/images/sc4.png" width=400>
 
 ## Display in mobile
 
-<img src="client/src/assets/images/sc9.png" width=200>
-<img src="client/src/assets/images/sc10.png" width=200>
-<img src="client/src/assets/images/sc11.png" width=200>
-<img src="client/src/assets/images/sc12.png" width=200>
+<img src="client/src/assets/images/sc5.png" width=200>
+<img src="client/src/assets/images/sc6.png" width=200>
+<img src="client/src/assets/images/sc7.png" width=200>
+<img src="client/src/assets/images/sc8.png" width=200>
